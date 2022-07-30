@@ -28,7 +28,6 @@
     <None Remove="Swashbuckle" />
     <None Remove="System.IdentityModel.Tokens.Jwt" />
     <None Remove="Views\" />
-    <None Remove="Views\Home\" />
     <None Remove="Models\DTOs\" />
   </ItemGroup>
   <ItemGroup>
@@ -61,7 +60,6 @@
     <Folder Include="Services\Interfaces\" />
     <Folder Include="Database\" />
     <Folder Include="Views\" />
-    <Folder Include="Views\Home\" />
     <Folder Include="Models\DTOs\" />
   </ItemGroup>
 </Project>
