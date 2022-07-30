@@ -10,11 +10,8 @@ namespace GreenFoxFinalHomework.Controllers
 {
     public class AuthController : Controller
     {
-        private readonly IUserService userService;
-
-        public AuthController(IUserService userService)
+        public AuthController()
         {
-            this.userService = userService;
         }
 
         [Route("")]

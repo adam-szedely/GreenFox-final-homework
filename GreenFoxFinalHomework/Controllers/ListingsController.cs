@@ -25,7 +25,7 @@ namespace GreenFoxFinalHomework.Controllers
             return View();
         }
 
-        [HttpGet("list")]
+        [HttpGet("/list")]
         public IActionResult ViewListings()
         {
             return Json(listings.ListItems());

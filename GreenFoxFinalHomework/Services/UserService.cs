@@ -5,11 +5,8 @@ namespace GreenFoxFinalHomework.Services
 {
     public class UserService : IUserService
     {
-
-        private readonly IApplicationDbContext data;
-        public UserService(IApplicationDbContext data)
+        public UserService()
         {
-            this.data = data;
         }
     }
 }

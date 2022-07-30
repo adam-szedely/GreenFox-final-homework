@@ -7,12 +7,14 @@ using GreenFoxFinalHomework.Services.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.IdentityModel.Tokens;
 using GreenFoxFinalHomework.Database;
-using GreenFoxFinalHomework.Services;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
 builder.Services.AddScoped<IUserService, UserService>();
+builder.Services.AddScoped<IListingService, ListingService>();
+builder.Services.AddScoped<IApplicationDbContext, ApplicationDbContext>();
+
 
 ConfigureDb(builder.Services);
 

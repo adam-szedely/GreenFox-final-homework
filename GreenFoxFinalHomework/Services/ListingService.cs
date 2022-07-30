@@ -8,12 +8,13 @@ namespace GreenFoxFinalHomework.Services
     public class ListingService : IListingService
     {
         private readonly IApplicationDbContext data;
+
         public ListingService(IApplicationDbContext data)
         {
             this.data = data;
         }
 
-        public Item CreateItem(string name, string description, string photoUrl, int startingPrice, int userId)
+        public Item CreateItem(string name, string description, string photoUrl, double startingPrice, double purchasePrice)
         {
             throw new NotImplementedException();
         }
