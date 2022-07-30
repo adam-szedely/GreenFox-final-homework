@@ -12,9 +12,7 @@ using GreenFoxFinalHomework.Services;
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddMvc();
-
 builder.Services.AddScoped<IUserService, UserService>();
-
 
 ConfigureDb(builder.Services);
 
@@ -34,8 +32,8 @@ app.Run();
 
 static void ConfigureDb(IServiceCollection services)
 {
-    var config = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
-    var connectionString = config.GetConnectionString("Default");
-    services.AddDbContext<ApplicationDbContext>(b => b.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
+var config = services.BuildServiceProvider().GetRequiredService<IConfiguration>();
+var connectionString = config.GetConnectionString("Default");
+services.AddDbContext<ApplicationDbContext>(b => b.UseMySql(connectionString, ServerVersion.AutoDetect(connectionString)));
 }
 public partial class Program { }
