@@ -25,10 +25,26 @@ namespace GreenFoxFinalHomework.Controllers
             return View();
         }
 
-        [HttpGet("/list")]
+        [HttpGet("{id}/list")]
         public IActionResult ViewListings()
         {
             return Json(listings.ListItems());
+        }
+
+        [HttpPost("{id}/add")]
+        public IActionResult CreateItem(string name, string description, string photoUrl, int startingPrice, int id)
+        {
+            if (string.IsNullOrEmpty(name))
+            {
+                var error = new { error = "Field name is empty!" };
+                return StatusCode(400, error);
+            }
+            else if (Uri.IsWellFormedUriString(photoUrl, UriKind.RelativeOrAbsolute) == false)
+            {
+                var error = new { error = $"{photoUrl} is not a valid url!" };
+                return StatusCode(400, error);
+            }
+            return Json(listings.CreateItem(name, description, photoUrl, startingPrice, id));
         }
 
     }

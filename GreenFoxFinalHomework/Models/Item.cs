@@ -8,7 +8,7 @@ namespace GreenFoxFinalHomework.Models
         public string ItemDescription { get; set; }
         public string ItemPhotoUrl { get; set; }
         public int ItemStartingPrice { get; set; }
-        public int ItemPurchasePrice { get; set; }
+        public int ?ItemPurchasePrice { get; set; }
         public int UserId { get; set; }
         public User User { get; set; }
         public List<Bid> ItemBids { get; set; }

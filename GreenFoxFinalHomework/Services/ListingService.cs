@@ -14,9 +14,11 @@ namespace GreenFoxFinalHomework.Services
             this.data = data;
         }
 
-        public Item CreateItem(string name, string description, string photoUrl, double startingPrice, int userId)
+        public Item CreateItem(string name, string description, string photoUrl, int startingPrice, int userId)
         {
-            throw new NotImplementedException();
+            var itemToBeCreated = new Item(name, description, photoUrl, startingPrice, userId);
+            data.Items.Add(itemToBeCreated);
+            return itemToBeCreated;
         }
 
         public List<Item> ListItems()
@@ -40,6 +42,11 @@ namespace GreenFoxFinalHomework.Services
         public Item ViewItem(int id)
         {
             throw new NotImplementedException();
+        }
+
+        public bool ListingValidator()
+        {
+            return true;
         }
     }
 }
