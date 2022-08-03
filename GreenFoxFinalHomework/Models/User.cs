@@ -13,6 +13,13 @@ namespace GreenFoxFinalHomework.Models
         public User()
         {
         }
+
+        public User(string username, string password, string email)
+        {
+            UserName = username;
+            Password = password;
+            Email = email;
+        }
     }
 }
 

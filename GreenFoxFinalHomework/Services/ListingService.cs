@@ -41,13 +41,26 @@ namespace GreenFoxFinalHomework.Services
 
         public Item ViewItem(int id)
         {
-            throw new NotImplementedException();
+            return data.Items.SingleOrDefault(i => i.Id == id);
         }
 
         public bool ListingValidator()
         {
             return true;
         }
+
+        public Item BuyItem(int id, int purchasePrice)
+        {
+            var itemToBeSold = data.Items.FirstOrDefault(i => i.Id == id);
+            if (itemToBeSold.ItemStartingPrice < purchasePrice)
+            {
+                itemToBeSold.ItemPurchasePrice = purchasePrice;
+                data.SaveChanges();
+                return itemToBeSold;
+            }
+            return itemToBeSold;
+        }
+
     }
 }
 

@@ -11,7 +11,7 @@
     "GreenFoxFinalHomework": {
       "commandName": "Project",
       "launchBrowser": true,
-      "applicationUrl": "http://localhost:50610",
+      "applicationUrl": "http://localhost:3872",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }

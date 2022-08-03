@@ -31,6 +31,17 @@ namespace GreenFoxFinalHomework.Controllers
             return Json(listings.ListItems());
         }
 
+        [HttpGet("{id}/view")]
+        public IActionResult ViewItem(int id)
+        {
+            if (id == null)
+            {
+                var error = new { error = "Specify which item!" };
+                return StatusCode(401, error);
+            }
+            return Json(listings.ViewItem(id));
+        }
+
         [HttpPost("{id}/add")]
         public IActionResult CreateItem(string name, string description, string photoUrl, int startingPrice, int id)
         {

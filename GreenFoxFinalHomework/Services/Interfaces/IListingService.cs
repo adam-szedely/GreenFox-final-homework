@@ -7,6 +7,7 @@ namespace GreenFoxFinalHomework.Services.Interfaces
     {
         Item CreateItem(string name, string description, string photoUrl, int startingPrice, int userId);
         Item ViewItem(int id);
+        Item BuyItem(int id, int purchasePrice);
         List<Item> ListItems();
         List<Item> ListItems(int howMany);
     }
